@@ -1,6 +1,6 @@
 import comeco from '../../../src/assets/forca0.png'
 import { Button, ContentJogo } from './jogo.style'
-export default function Jogo({comecaJogo, palvras, buttonIncial, palavraArray}) {
+export default function Jogo({comecaJogo, buttonIncial, palavraArray}) {
   return (
     <ContentJogo >
       <div>
@@ -8,7 +8,7 @@ export default function Jogo({comecaJogo, palvras, buttonIncial, palavraArray}) 
         <div>
           <Button disabled={buttonIncial} onClick={comecaJogo} >Iniciar Jogo</Button>
           <div>
-           <p>{palavraArray.map((array) => <span> _</span>)}</p>
+           <p>{palavraArray.map((array) => <span>  _</span>)}</p>
           </div>
         </div>
       </div>

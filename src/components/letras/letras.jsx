@@ -10,14 +10,13 @@ export default function Letras({
   return (
     <ContentLetras>
       {alfabeto.map((letras, indice) => {
-        return (
+        return ( 
           <Button
-            backGroundAtivo={`${classButton}${letrasAlfabeto.includes(indice) ? 'desativado' : ''}` }
-            indice={indice}
+            backGroundAtivo={`${classButton}${letrasAlfabeto.includes(letras) ? 'desativado' : ''}` }
             
             disabled={iniciarJogo || letrasAlfabeto.includes(indice) ? true : false}
             key={letras}
-            onClick={() => salvarPalavra(indice)}
+            onClick={() => salvarPalavra(letras)}
           >
             {letras.toUpperCase()}
           </Button>

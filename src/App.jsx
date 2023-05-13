@@ -11,9 +11,9 @@ export default function App() {
   let [classButton, setClassButton] = useState('desativado')
   let [palavraSorteada, setPalavraSorteada] = useState('')
   let [buttonIncial, setButtonIncial] = useState(false)
-  const palavraArray = palavraSorteada.split("")
-  function salvarPalavra(indice) {
-    letrasAlfabeto.push(indice)
+  const palavraArray = palavraSorteada.split("") 
+  function salvarPalavra(letras) {
+    letrasAlfabeto.push(letras)
     setLetrasAlfabeto([...letrasAlfabeto])
     console.log(letrasAlfabeto)
     
@@ -33,7 +33,6 @@ export default function App() {
   return (
     <Content>
       <Jogo
-        palavras={palavras}
         comecaJogo={comecaJogo}
         buttonIncial={buttonIncial}
         palavraArray={palavraArray}
