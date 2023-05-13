@@ -1,22 +1,19 @@
 import comeco from '../assets/forca0.png'
-const array = ['palavra', 'outraPalavra', 'teste']
-export default function Jogo() {
+export default function Jogo({comecaJogo, palvras}) {
   return (
-    <div className="contentPrincipal">
+    <section className="contentJogo">
       <div>
         <img src={comeco} alt="" />
         <div>
-          <button>Iniciar Jogo</button>
+          <button onClick={comecaJogo} >Iniciar Jogo</button>
           <div>
-            {array.map((palavra) =>{
-              return (
-              <span> _</span>
-              ) 
-            })}
+            <span> _</span>
+            <span> _</span>
+            <span> _</span>
+            <span> _</span>
           </div>
-         
         </div>
       </div>
-    </div>
+    </section>
   )
 }
