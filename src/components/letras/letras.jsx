@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { ContentLetras, Button } from '../letras/letras.style'
+import { remove } from 'remove-accents'
 export default function Letras({
   alfabeto,
   setLetrasAlfabeto,
@@ -23,7 +24,7 @@ export default function Letras({
       setContador(contador)
     }
     let temp = palavraArray.map(letra => {
-      return letrasAlfabeto.includes(letra) ? letra.toUpperCase() : ' _'
+      return letrasAlfabeto.includes(remove(letra)) ? letra.toUpperCase() : ' _'
     })
     setPalavrasUnder(temp)
     console.log(temp)
@@ -34,7 +35,7 @@ export default function Letras({
       setIniciarJogo(true)
 
       setPalavrasUnder(inteiro)
-    } else if (temp.join('').toLowerCase() === palavraArray.join('')) {
+    } else if (remove(temp.join('').toLowerCase()) === remove(palavraArray.join('')) ) {
       setAtivo('green')
       setIniciarJogo(true)
     }

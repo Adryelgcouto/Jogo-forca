@@ -4,6 +4,7 @@ import palavras from './palavras'
 import alfabeto from './components/alfabeto'
 import { useState } from 'react'
 import { Content } from './App.style'
+import { remove } from 'remove-accents'
 
 import comeco0 from '../src/assets/forca0.png'
 import comeco1 from '../src/assets/forca1.png'
@@ -12,6 +13,7 @@ import comeco3 from '../src/assets/forca3.png'
 import comeco4 from '../src/assets/forca4.png'
 import comeco5 from '../src/assets/forca5.png'
 import comeco6 from '../src/assets/forca6.png'
+import { Chute } from './components/chute/chute'
 export default function App() {
   let [letrasAlfabeto, setLetrasAlfabeto] = useState([])
   let [iniciarJogo, setIniciarJogo] = useState(true)
@@ -56,7 +58,7 @@ export default function App() {
     palavraSorteada = palavras[sorteio]
     setPalavraSorteada(palavraSorteada)
     palavrasUnder = palavraSorteada.split('').map(letra => {
-      return letrasAlfabeto.includes(letra) ? letra.toUpperCase() : ' _'
+      return letrasAlfabeto.includes(remove(letra)) ? letra.toUpperCase() : ' _'
     })
     setPalavrasUnder(palavrasUnder)
   }
@@ -87,6 +89,14 @@ export default function App() {
         letrasAlfabeto={letrasAlfabeto}
         iniciarJogo={iniciarJogo}
         classButton={classButton}
+      />
+      <Chute
+        palavraSorteada={palavraSorteada}
+        setAtivo={setAtivo}
+        setContador={setContador}
+        setPalavrasUnder={setPalavrasUnder}
+        iniciarJogo={iniciarJogo}
+        setIniciarJogo={setIniciarJogo}
       />
     </Content>
   )
