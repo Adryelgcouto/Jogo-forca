@@ -71,7 +71,6 @@ export default function App() {
   return (
     <Content>
       <Jogo
-        palavras={palavras}
         comecaJogo={comecaJogo}
         buttonIncial={buttonIncial}
         palavraArray={palavraArray}

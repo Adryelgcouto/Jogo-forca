@@ -10,7 +10,7 @@ export default function Letras({
   return (
     <ContentLetras>
       {alfabeto.map((letras, indice) => {
-        return (
+        return ( 
           <Button
             backGroundAtivo={`${classButton}${letrasAlfabeto.includes(letras) ? 'desativado' : ''}` }
             disabled={iniciarJogo || letrasAlfabeto.includes(letras) ? true : false}
