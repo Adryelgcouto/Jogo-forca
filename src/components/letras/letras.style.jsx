@@ -13,12 +13,15 @@ export const Button = styled.button`
   height: 40px;
   margin-right: 10px;
   cursor: pointer;
-  background-color: ${({ backGroundAtivo }) => 
-    backGroundAtivo === 'desativado' ? '#9FAAB5' : '#E1ECF4'};
-  color: ${({ backGroundAtivo }) =>
-    backGroundAtivo === 'desativado' ? '#798A9F' : '#39739D'};
+  background-color: #e1ecf4;
+  color: #39739d;
   border: 1px solid #7aa7c7;
   border-radius: 3px;
   font-size: 16px;
   font-weight: 700;
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #9faab5;
+    color: #798a9f;
+  }
 `

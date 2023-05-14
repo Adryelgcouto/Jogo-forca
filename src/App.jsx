@@ -27,37 +27,26 @@ export default function App() {
     comeco5,
     comeco6
   ])
+  let [palavrasUnder, setPalavrasUnder] = useState('')
   const palavraArray = palavraSorteada.split('')
   let [contador, setContador] = useState(0)
   let [ativo, setAtivo] = useState('')
 
-  function salvarPalavra(letras) {
-    letrasAlfabeto.push(letras)
-    setLetrasAlfabeto([...letrasAlfabeto])
-    console.log(letrasAlfabeto)
-    if (palavraArray.includes(letras)) {
-      return
-    } else {
-      contador += 1
-      setContador(contador)
+  console.log(palavraArray)
+  /*  for (let i = 0; i < letrasAlfabeto.length; i++) {
+    if (letrasAlfabeto.includes(correto[i]) ) {
+      ativo = 'green'
     }
-    
-  }
-  if (contador === 6) {
-    ativo = 'red'
-    letrasAlfabeto = [...palavraArray]
-  }
-  const correto = letrasAlfabeto.map(letras => {
-    if (palavraArray.includes(letras)) {
-      return letras
-    }
-  })
-  console.log(correto)
+  } */
   /*   if(correto === palavraArray){
     ativo = 'green'
   } */
   function comecaJogo() {
     buttonIncial = true
+    letrasAlfabeto = []
+    setContador(0)
+    setAtivo('')
+    setLetrasAlfabeto(letrasAlfabeto)
     iniciarJogo = false
     classButton = ''
     setButtonIncial(buttonIncial)
@@ -66,6 +55,10 @@ export default function App() {
     const sorteio = Math.floor(Math.random() * palavras.length)
     palavraSorteada = palavras[sorteio]
     setPalavraSorteada(palavraSorteada)
+    palavrasUnder = palavraSorteada.split('').map(letra => {
+      return letrasAlfabeto.includes(letra) ? letra.toUpperCase() : ' _'
+    })
+    setPalavrasUnder(palavrasUnder)
   }
 
   return (
@@ -78,11 +71,20 @@ export default function App() {
         forcaArray={forcaArray}
         contador={contador}
         Ativo={ativo}
+        palavrasUnder={palavrasUnder}
       />
       <Letras
+        setIniciarJogo={setIniciarJogo}
+        setAtivo={setAtivo}
+        ativo={ativo}
+        setLetrasAlfabeto={setLetrasAlfabeto}
+        setPalavrasUnder={setPalavrasUnder}
+        setContador={setContador}
+        contador={contador}
+        palavraArray={palavraArray}
+        palavrasUnder={palavrasUnder}
         alfabeto={alfabeto}
         letrasAlfabeto={letrasAlfabeto}
-        salvarPalavra={salvarPalavra}
         iniciarJogo={iniciarJogo}
         classButton={classButton}
       />

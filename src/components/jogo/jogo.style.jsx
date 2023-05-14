@@ -38,5 +38,5 @@ export const PalavraForca = styled.p`
   margin-top: 282px;
   font-weight: bold;
   font-size: 50px;
-  color: ${({color}) => color };
+  color: ${({ color }) => color};
 `
