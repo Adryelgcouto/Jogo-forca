@@ -35,7 +35,9 @@ export default function Letras({
       setIniciarJogo(true)
 
       setPalavrasUnder(inteiro)
-    } else if (remove(temp.join('').toLowerCase()) === remove(palavraArray.join('')) ) {
+    } else if (
+      remove(temp.join('').toLowerCase()) === remove(palavraArray.join(''))
+    ) {
       setAtivo('green')
       setIniciarJogo(true)
     }
@@ -46,7 +48,8 @@ export default function Letras({
       {alfabeto.map((letras, indice) => {
         return (
           <Button
-            backGroundAtivo={{classButton}}
+            data-test="letter"
+            backGroundAtivo={{ classButton }}
             disabled={
               iniciarJogo || letrasAlfabeto.includes(letras) ? true : false
             }

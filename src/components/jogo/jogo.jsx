@@ -14,11 +14,11 @@ export default function Jogo({
   return (
     <ContentJogo>
       <div>
-        <img src={forcaArray[contador]} alt="" />
+        <img data-test="game-image" src={forcaArray[contador]} alt="" />
         <div>
-          <Button onClick={() => comecaJogo(letrasAlfabeto)}>Iniciar Jogo</Button>
+          <Button data-test="choose-word" onClick={() => comecaJogo(letrasAlfabeto)}>Iniciar Jogo</Button>
           <div>
-            <PalavraForca color={Ativo}>{palavrasUnder}</PalavraForca>
+            <PalavraForca data-test="word" color={Ativo}>{palavrasUnder}</PalavraForca>
           </div>
         </div>
       </div>
