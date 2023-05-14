@@ -1,14 +1,16 @@
-import comeco from '../../../src/assets/forca0.png'
-import { Button, ContentJogo } from './jogo.style'
-export default function Jogo({comecaJogo, palvras, buttonIncial, palavraArray}) {
+
+
+import { Button, ContentJogo, PalavraForca } from './jogo.style'
+export default function Jogo({comecaJogo, palvras, buttonIncial, palavraArray,letrasAlfabeto, forcaArray, contador, Ativo}) {
+  console.log(palavraArray);
   return (
     <ContentJogo >
       <div>
-        <img src={comeco} alt="" />
+        <img src={forcaArray[contador]} alt="" />
         <div>
-          <Button disabled={buttonIncial} onClick={comecaJogo} >Iniciar Jogo</Button>
+          <Button onClick={comecaJogo} >Iniciar Jogo</Button>
           <div>
-           <p>{palavraArray.map((array) => <span> _</span>)}</p>
+           <PalavraForca color={Ativo}>{palavraArray.map((array) => <span  >{letrasAlfabeto.includes(array) ? array.toUpperCase() : ' _' }</span>)}</PalavraForca>
           </div>
         </div>
       </div>

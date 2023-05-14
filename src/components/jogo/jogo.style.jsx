@@ -25,11 +25,6 @@ export const ContentJogo = styled.section`
       display: flex;
       flex-direction: column;
       align-items: center;
-      & p { 
-        margin-top: 282px ;
-        font-weight: bold;
-        font-size: 50px;
-      }
     }
     & img {
       margin-top: 59px;
@@ -37,4 +32,11 @@ export const ContentJogo = styled.section`
       width: 400px;
     }
   }
+`
+
+export const PalavraForca = styled.p`
+  margin-top: 282px;
+  font-weight: bold;
+  font-size: 50px;
+  color: ${({color}) => color };
 `

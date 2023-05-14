@@ -13,7 +13,7 @@ export const Button = styled.button`
   height: 40px;
   margin-right: 10px;
   cursor: pointer;
-  background-color: ${({ backGroundAtivo }) =>
+  background-color: ${({ backGroundAtivo }) => 
     backGroundAtivo === 'desativado' ? '#9FAAB5' : '#E1ECF4'};
   color: ${({ backGroundAtivo }) =>
     backGroundAtivo === 'desativado' ? '#798A9F' : '#39739D'};
