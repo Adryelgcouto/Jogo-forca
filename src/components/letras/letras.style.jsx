@@ -17,6 +17,7 @@ export const ContentLetras = styled.section`
   }
 `
 export const Button = styled.button`
+
   width: 40px;
   height: 40px;
   margin-right: 10px;

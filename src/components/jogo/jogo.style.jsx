@@ -10,6 +10,9 @@ export const Button = styled.button`
   font-weight: 700;
   color: white;
   border-radius: 8px;
+  @media (max-width: 1024px){
+    margin-bottom: 20px;
+  }
 `
 export const ContentJogo = styled.section`
   display: flex;
