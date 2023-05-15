@@ -10,7 +10,6 @@ export const ContentLetras = styled.section`
   @media (max-width: 1024px) {
     width: 100%;
     align-items: center;
-    margin-top: 300px;
     margin-bottom: 20px;
     justify-content: center;
     

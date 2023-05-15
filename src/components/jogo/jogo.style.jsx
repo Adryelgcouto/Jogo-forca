@@ -49,6 +49,10 @@ export const ContentJogo = styled.section`
       margin-top: 59px;
       height: 466px;
       width: 400px;
+      @media (max-width: 1024px){
+        width: 200px;
+        height: 100%;
+      }
     }
   }
 `

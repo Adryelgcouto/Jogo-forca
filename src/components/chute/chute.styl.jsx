@@ -12,7 +12,7 @@ export const Chutar = styled.div`
   margin-top: 40px;
   @media (max-width: 1024px) {
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 70px;
   }
   p{
     font-size: 20px;
