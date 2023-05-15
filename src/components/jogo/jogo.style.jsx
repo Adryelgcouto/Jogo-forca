@@ -16,11 +16,27 @@ export const ContentJogo = styled.section`
   justify-content: center;
   height: 466px;
 
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    width: 100%;
+    & div {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      & img {
+        width: 100%;
+      }
+    }
+  }
+
   & div {
     display: flex;
     justify-content: space-between;
     width: 934px;
     height: 467px;
+    @media (max-width: 1024px){
+      width: 100%;
+    }
     & div {
       display: flex;
       flex-direction: column;
@@ -39,4 +55,7 @@ export const PalavraForca = styled.p`
   font-weight: bold;
   font-size: 50px;
   color: ${({ color }) => color};
+  @media (max-width: 1024px) {
+    margin-top: 0px;
+  }
 `

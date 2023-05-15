@@ -7,6 +7,12 @@ export const ContentLetras = styled.section`
   margin-top: 140px;
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 1024px) {
+    width: 100%;
+    align-items: center;
+    margin-top: 300px;
+    justify-content: center;
+  }
 `
 export const Button = styled.button`
   width: 40px;
