@@ -24,7 +24,7 @@ export default function Letras({
       setContador(contador)
     }
     let temp = palavraArray.map(letra => {
-      return letrasAlfabeto.includes(remove(letra)) ? letra.toUpperCase() : ' _'
+      return letrasAlfabeto.includes(remove(letra)) ? letra : ' _'
     })
     setPalavrasUnder(temp)
     console.log(temp)
